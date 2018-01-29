@@ -5,6 +5,7 @@ console.log('\
 ');
 
 //options vars
+var version = '0.4';
 var add_custom_quick_task_btn = false;//set to true for adding save and close btn to qiuck task panel
 
 //loading the script
@@ -252,7 +253,7 @@ function getRunningTask(){
 
 //add btn for recreate tracking buttons
   function rebuild_track_btn(){
-    $(".main-grid-container").prepend('<div class="createTrackBtns">Rebuild Tracking Buttons|v0.4</div>');
+    $(".main-grid-container").prepend('<div class="createTrackBtns">Rebuild Tracking Buttons|v'+window.version+'</div>');
     $(".createTrackBtns").click(function(){
       $('.main-grid-cell-content span.main-grid-plus-button').click();
       $('.trackBtn, .actionBtn').remove();
