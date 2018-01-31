@@ -279,7 +279,7 @@ function quick_add_task_btn(delayT = 3000){
   $('.tasks-quick-form-button').click(function(){
       $('head').append("<style>span.add_close {cursor: pointer;border: 1px solid darkgray;padding: 10px 7px;font-family: OpenSans-Bold, Helvetica, Arial, sans-serif;font-size: 12px;font-weight: 400;height: 39px;line-height: 39px;color: dimgray;margin-right: 10px;}span.add_close:hover {background-color: lightgray;}</style>");
       if($('.add_close').length != 1){
-        $('span.task-top-panel-middle').prepend('<span class="add_close">add and close</span>');
+        $('span.task-top-panel-middle').prepend('<span class="add_close">save and close</span>');
         $('.add_close').click(function(){
           console.log('save and close');
           $('span#task-new-item-save').click();
