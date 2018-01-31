@@ -1,6 +1,6 @@
 console.log('\
       Extra options - add to script exec to active option:\n\
-        -  add_custom_quick_task_btn = true; = adding save and close btn to qiuck task panel\n\
+        -  add_custom_quick_task_btn = true; => adding save and close btn to qiuck task panel\n\
         \
 ');
 
