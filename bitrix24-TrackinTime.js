@@ -21,7 +21,7 @@ setTimeout(function(){
 
         //inject styles
         console.log("inject styles");
-        $('head').append("<style>.createTrackBtns{font-size: 13px;background-color: #3c3c3c;padding: 2px;text-align: center;width: 205px;width: fit-content;color: #fff;cursor: pointer;border-right: 1px solid #000;border-bottom: 1px solid #000;border-radius: 0 0 5px 0;}.createTrackBtns:hover{background-color: grey;}span.trackBtn, span.actionBtn {background-color: #3c3c3c;color: #fff;padding: 0 10px;cursor: pointer;}span.trackBtn{border-radius: 10px 0 0 10px;border-right:0.5px solid #fff;}span.actionBtn{border-radius: 0 10px 10px 0;border-left: 0.5px solid #fff;}span.stopTrack {background-color: lightseagreen;color: #000;}span.noProject{background-color:#ff8c00}span.trackBtn:hover, span.actionBtn:hover {background-color: grey;}</style>")
+        $('head').append("<style>.createTrackBtns{font-size: 13px;background-color: #3c3c3c;padding: 2px;text-align: center;width: 205px;width: fit-content;color: #fff;cursor: pointer;border-right: 1px solid #000;border-bottom: 1px solid #000;border-radius: 0 0 5px 0;}.createTrackBtns:hover{background-color: grey;}span.trackBtn, span.actionBtn {background-color: #3c3c3c;color: #fff;padding: 0 10px;cursor: pointer;}span.trackBtn{border-radius: 10px 0 0 10px;border-right:0.5px solid #fff;}span.actionBtn{border-radius: 0 10px 10px 0;border-left: 0.5px solid #fff;}span.stopTrack {background-color: lightseagreen;color: #000;}span.noProject{background-color:#ff8c00}span.trackBtn:hover, span.actionBtn:hover {background-color: grey;}a.important_task{  color: #fff !important;background-color: red;padding: 5px 10px;border-radius: 20px;}span.important_task_btn {display: none;text-decoration: underline;cursor: pointer;margin-left: 15px;}.main-grid-cell:hover .important_task_btn {display: initial;}</style>")
 
         //open subtasks to be abel to build buttons for them too
         console.log('trying to expand subtasks rows');
@@ -47,6 +47,7 @@ setTimeout(function(){
 function buildTracker(){
   console.log('\nstart building buttons...');
   $(".main-grid-row-body td:nth-child(3)").append('<span class="trackBtn">track</span><span class="actionBtn close">close</span>');
+  $(".main-grid-row-body td:nth-child(3)").append('<span class="important_task_btn">mark important</span>');
     //track btn setup
     $(".trackBtn").click(function(){
       var task_name;
