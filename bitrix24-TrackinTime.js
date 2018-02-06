@@ -97,7 +97,7 @@ function buildTracker(){
     //mark important btn setup
     $(".important_task_btn").click(function(){
       var bitrix_id = $(this).closest("tr").attr("data-id");
-      $(this).closest("td").find("a").addClass('important_task');
+      $(this).closest("td").find("span a").addClass('important_task');
       console.log('mark as important');
       if($(this).hasClass("close")){
         $(this).removeClass("close").text("open");
