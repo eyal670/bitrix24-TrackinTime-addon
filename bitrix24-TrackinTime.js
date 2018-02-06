@@ -94,27 +94,26 @@ function buildTracker(){
       }
       //track(action,query,bitrix_id);
     });
+    //mark important btn setup
+    $(".important_task_btn").click(function(){
+      var bitrix_id = $(this).closest("tr").attr("data-id");
+      $(this).closest("td a").addClass('important_task');
+      console.log('mark as important');
+      if($(this).hasClass("close")){
+        $(this).removeClass("close").text("open");
+        action = "close";
+        query = 'https://app.trackingtime.co/api/v4/tasks/close/'+window.running_task;
+        localStorage.removeItem("bitrix:ttTask:ttEvent-id");
+        console.log('query: '+query);
+        console.log('closing task: '+window.running_task);
+      }
+    });
     console.log('done building buttons');
     //closing sub tasks rows
     $('.main-grid-cell-content span.main-grid-plus-button').click();
     //checking for already running tasks
     getRunningTask();
   }
-//mark important btn setup
-$(".important_task_btn").click(function(){
-  var bitrix_id = $(this).closest("tr").attr("data-id");
-  $(this).closest("td a").addClass('important_task');
-  console.log('mark as important');
-  if($(this).hasClass("close")){
-    $(this).removeClass("close").text("open");
-    action = "close";
-    query = 'https://app.trackingtime.co/api/v4/tasks/close/'+window.running_task;
-    localStorage.removeItem("bitrix:ttTask:ttEvent-id");
-    console.log('query: '+query);
-    console.log('closing task: '+window.running_task);
-  }
-});
-
 //start tracking task
 function start_tracking(task_name, project_name, bitrix_id, bitrix_link){
   var time = get_date();
