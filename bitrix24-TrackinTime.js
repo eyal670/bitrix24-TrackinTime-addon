@@ -47,7 +47,7 @@ setTimeout(function(){
 function buildTracker(){
   console.log('\nstart building buttons...');
   $(".main-grid-row-body td:nth-child(3)").append('<span class="trackBtn">track</span><span class="actionBtn close">close</span>');
-  $(".main-grid-row-body td:nth-child(3)").append('<span class="important_task_btn">mark important</span>');
+  $(".main-grid-row-body td:nth-child(3)").append('<span class="important_task_btn">important</span>');
     //track btn setup
     $(".trackBtn").click(function(){
       var task_name;
