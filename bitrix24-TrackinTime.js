@@ -30,7 +30,7 @@ setTimeout(function(){
         setTimeout(function(){
           buildTracker();
           rebuild_track_btn();
-        }, 500); 
+        }, 2000); 
       }else{
         console.log('no tasks table, no action taken');
       }
