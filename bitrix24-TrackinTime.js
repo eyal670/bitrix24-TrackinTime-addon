@@ -30,7 +30,7 @@ setTimeout(function(){
         setTimeout(function(){
           buildTracker();
           rebuild_track_btn();
-        }, 2000); 
+        }, 100); 
       }else{
         console.log('no tasks table, no action taken');
       }
@@ -40,7 +40,7 @@ setTimeout(function(){
         quick_add_task_btn();
       }
 });
-},3000);
+},2000);
 
 /***Functions Definition***/
 //build tracker btns
