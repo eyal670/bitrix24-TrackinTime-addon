@@ -5,7 +5,7 @@ console.log('\
 ');
 
 //options vars
-var version = '0.4.2 Beta';
+var version = '0.4.3 Beta';
 var add_custom_quick_task_btn = false;//set to true for adding save and close btn to qiuck task panel
 
 //loading the script
