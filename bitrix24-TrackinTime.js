@@ -62,8 +62,8 @@ function buildTracker(){
         task_name = $(this).parent().find("a.task-title").text();
         //get bitrix task link
         var bitrix_link = 'https://divine.bitrix24.com'+$(this).parent().find("a.task-title").attr('href');
-        if($(".profile-menu-info").length){
-          project_name = $.trim($(".profile-menu-info").text());
+        if($(".profile-menu-name").length){
+          project_name = $.trim($(".profile-menu-name").text());
         }else if(parseInt($(this).closest("tr").attr('data-group-id'))){
           var group_id = $(this).closest("tr").attr('data-group-id');
           var project_name = $.trim($('.main-grid-table').find('tr[data-id="group_'+group_id+'"] a').text());
