@@ -11,7 +11,7 @@ var add_custom_quick_task_btn = false;//set to true for adding save and close bt
 
 //loading the script
     $( document ).ajaxStop(function() {
-      if($('.createTrackBtns').length){
+      if($(".createTrackBtns").length){
       //check if tasks table is on that page and if found run the setup function
       if($(".main-grid-container").length){
         //console.clear();
