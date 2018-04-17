@@ -9,7 +9,7 @@ var version = '0.4.2';
 var add_custom_quick_task_btn = false;//set to true for adding save and close btn to qiuck task panel
 
 //loading the script
-    $( document ).ready(function() {
+    $( document ).ajaxStop(function() {
       //check if tasks table is on that page and if found run the setup function
       if($(".main-grid-container").length){
         //console.clear();
