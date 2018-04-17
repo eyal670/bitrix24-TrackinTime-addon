@@ -1,5 +1,4 @@
 console.log(`
-      test ajaxstop() bind with if statment
       Extra options - add to script exec to active option:\n\
         -  add_custom_quick_task_btn = true; => adding save and close btn to qiuck task panel\n
         
@@ -10,8 +9,7 @@ var version = '0.4.2';
 var add_custom_quick_task_btn = false;//set to true for adding save and close btn to qiuck task panel
 
 //loading the script
-    $( document ).ajaxStop(function() {
-      if($(".createTrackBtns").length){
+    $( document ).ready(function() {
       //check if tasks table is on that page and if found run the setup function
       if($(".main-grid-container").length){
         //console.clear();
@@ -40,7 +38,6 @@ var add_custom_quick_task_btn = false;//set to true for adding save and close bt
       if(add_custom_quick_task_btn){
         quick_add_task_btn();
       }
-    }
 });
 
 /***Functions Definition***/
