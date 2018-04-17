@@ -1,8 +1,9 @@
-console.log('\
+console.log(`
+      test ajaxstop() bind
       Extra options - add to script exec to active option:\n\
-        -  add_custom_quick_task_btn = true; => adding save and close btn to qiuck task panel\n\
-        \
-');
+        -  add_custom_quick_task_btn = true; => adding save and close btn to qiuck task panel\n
+        
+`);
 
 //options vars
 var version = '0.4.2';
