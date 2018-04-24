@@ -276,12 +276,16 @@ function get_date(){
 //add save and close btn for quick add task panel
 function quick_add_task_btn(delayT = 3000){
   console.log('\nadd_custom_quick_task_btn='+add_custom_quick_task_btn);
+  console.log('add auto flag for whene description is added');    
   $('.tasks-quick-form-button').click(function(){
       $('head').append("<style>span.add_close {cursor: pointer;border: 1px solid darkgray;padding: 10px 7px;font-family: OpenSans-Bold, Helvetica, Arial, sans-serif;font-size: 12px;font-weight: 400;height: 39px;line-height: 39px;color: dimgray;margin-right: 10px;}span.add_close:hover {background-color: lightgray;}</style>");
       if($('.add_close').length != 1){
         $('span.task-top-panel-middle').prepend('<span class="add_close">save and close</span>');
         $('.add_close').click(function(){
           console.log('save and close');
+          if($('#task-new-item-description').val() != ''){
+            $('#task-new-item-title').val($('#task-new-item-title').val() + ' -d');
+          }
           $('span#task-new-item-save').click();
             setTimeout(function(){
             $('span#task-new-item-cancel, span#task-new-item-notification-hide').click();
