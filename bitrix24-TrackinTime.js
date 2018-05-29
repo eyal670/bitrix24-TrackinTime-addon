@@ -1,12 +1,14 @@
 console.log(`
       Extra options - add to script exec to active option:\n\
         -  add_custom_quick_task_btn = true; => adding save and close btn to qiuck task panel\n
+        -  auto hide left menu on small screens = true; => auto hide left menu on small screens\n
         
 `);
 
 //options vars
 var version = '0.4.2';
 var add_custom_quick_task_btn = false;//set to true for adding save and close btn to qiuck task panel
+var auto_hide_left_menu = false;//set to true to auto hide left menu on small screens
 
 //loading the script
     $( document ).ready(function() {
@@ -37,6 +39,13 @@ var add_custom_quick_task_btn = false;//set to true for adding save and close bt
       //add costum save-quick-task btn
       if(add_custom_quick_task_btn){
         quick_add_task_btn();
+      }
+      //auto hide left menu on small screens
+      if(auto_hide_left_menu){
+        if ($(window).width() <=950 ) {
+          console.log('hiding left menu');
+          $(".menu-resize-btn").click(); 
+        }
       }
 });
 
