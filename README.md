@@ -9,7 +9,9 @@ add this function to your execution script:
     console.log('add_custom_quick_task_btn: '+[add_custom_quick_task_btn = true]);
   });
   ```
-
+#### extra options:
+  * add_custom_quick_task_btn = true; => adding save and close btn to qiuck task panel
+  * auto hide left menu on small screens = true; => auto hide left menu on small screens
 ### To Do:
 * Add live overall duration display for the task
 * close btn to mark task as done in bitrix and TrackingTime in one click
