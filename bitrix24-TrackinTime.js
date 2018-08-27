@@ -22,7 +22,52 @@ var auto_hide_left_menu = false;//set to true to auto hide left menu on small sc
 
         //inject styles
         console.log("inject styles");
-        $('head').append("<style>.createTrackBtns{font-size: 13px;background-color: #3c3c3c;padding: 2px;text-align: center;width: 205px;width: fit-content;color: #fff;cursor: pointer;border-right: 1px solid #000;border-bottom: 1px solid #000;border-radius: 0 0 5px 0;}.createTrackBtns:hover{background-color: grey;}span.trackBtn, span.actionBtn {background-color: #3c3c3c;color: #fff;padding: 0 10px;cursor: pointer;}span.trackBtn{border-radius: 10px 0 0 10px;border-right:0.5px solid #fff;}span.actionBtn{border-radius: 0 10px 10px 0;border-left: 0.5px solid #fff;}span.stopTrack {background-color: lightseagreen;color: #000;}span.noProject{background-color:#ff8c00}span.trackBtn:hover, span.actionBtn:hover {background-color: grey;}</style>")
+        $('head').append(
+          `<style>
+            .createTrackBtns {
+              font-size: 13px;
+              background-color: #3c3c3c;
+              padding: 2px;
+              text-align: center;
+              width: 205px;
+              width: fit-content;
+              color: #fff;
+              cursor: pointer;
+              border-right: 1px solid #000;
+              border-bottom: 1px solid #000;
+              border-radius: 0 0 5px 0;
+              position: fixed;
+              z-index: 301;
+            }
+            .createTrackBtns:hover {
+              background-color: grey;
+            }
+            span.trackBtn, span.actionBtn {
+              background-color: #3c3c3c;
+              color: #fff;
+              padding: 0 10px;
+              cursor: pointer;
+            }
+            span.trackBtn {
+              border-radius: 10px 0 0 10px;
+              border-right: 0.5px solid #fff;
+            }
+            span.actionBtn {
+              border-radius: 0 10px 10px 0;
+              border-left: 0.5px solid #fff;
+            }
+            span.stopTrack {
+              background-color: lightseagreen;
+              color: #000;
+            }
+            span.noProject {
+              background-color: #ff8c00
+            }
+            span.trackBtn:hover, span.actionBtn:hover {
+              background-color: grey;
+            }
+          </style>`
+        );
 
         //open subtasks to be abel to build buttons for them too
         console.log('trying to expand subtasks rows');
@@ -260,7 +305,8 @@ function getRunningTask(){
 
 //add btn for recreate tracking buttons
   function rebuild_track_btn(){
-    $(".main-grid-container").prepend('<div class="createTrackBtns">Rebuild Tracking Buttons|v'+window.version+'</div>');
+    // $(".main-grid-container").prepend('<div class="createTrackBtns">Rebuild Tracking Buttons|v'+window.version+'</div>');
+    $("body").prepend('<div class="createTrackBtns">Rebuild Tracking Buttons|v'+window.version+'</div>');
     $(".createTrackBtns").click(function(){
       $('.main-grid-cell-content span.main-grid-plus-button').click();
       $('.trackBtn, .actionBtn').remove();
