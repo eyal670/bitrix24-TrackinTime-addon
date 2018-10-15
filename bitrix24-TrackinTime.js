@@ -5,7 +5,7 @@ console.log('\
 ');
 
 //options vars
-var version = '0.4.1';
+var version = '0.4.2';
 var add_custom_quick_task_btn = false;//set to true for adding save and close btn to qiuck task panel
 
 //loading the script
@@ -21,7 +21,7 @@ setTimeout(function(){
 
         //inject styles
         console.log("inject styles");
-        $('head').append("<style>.createTrackBtns{font-size: 13px;background-color: #3c3c3c;padding: 2px;text-align: center;width: 205px;width: fit-content;color: #fff;cursor: pointer;border-right: 1px solid #000;border-bottom: 1px solid #000;border-radius: 0 0 5px 0;}.createTrackBtns:hover{background-color: grey;}span.trackBtn, span.actionBtn {background-color: #3c3c3c;color: #fff;padding: 0 10px;cursor: pointer;}span.trackBtn{border-radius: 10px 0 0 10px;border-right:0.5px solid #fff;}span.actionBtn{border-radius: 0 10px 10px 0;border-left: 0.5px solid #fff;}span.stopTrack {background-color: lightseagreen;color: #000;}span.noProject{background-color:#ff8c00}span.trackBtn:hover, span.actionBtn:hover {background-color: grey;}</style>")
+        $('head').append("<style>.createTrackBtns{font-size: 13px;background-color: #3c3c3c;padding: 2px;text-align: center;width: 205px;width: fit-content;color: #fff;cursor: pointer;border-right: 1px solid #000;border-bottom: 1px solid #000;border-radius: 0 0 5px 0;}.createTrackBtns:hover{background-color: grey;}span.trackBtn, span.actionBtn {background-color: #3c3c3c;color: #fff;padding: 0 10px;cursor: pointer;}span.trackBtn{border-radius: 10px 0 0 10px;border-right:0.5px solid #fff;}span.actionBtn{border-radius: 0 10px 10px 0;border-left: 0.5px solid #fff;}span.stopTrack {background-color: lightseagreen;color: #000;}span.noProject{background-color:#ff8c00}span.trackBtn:hover, span.actionBtn:hover {background-color: grey;}.setRTL{direction: rtl;text-align: right;padding-right: 15px;}</style>")
 
         //open subtasks to be abel to build buttons for them too
         console.log('trying to expand subtasks rows');
@@ -39,6 +39,7 @@ setTimeout(function(){
       if(add_custom_quick_task_btn){
         quick_add_task_btn();
       }
+      desc_rtl();
 });
 },3000);
 
@@ -296,5 +297,17 @@ function quick_add_task_btn(delayT = 3000){
         console.log('no action');
         return;
       }
+  });
+}
+
+//task desc rtl
+function desc_rtl(){
+  jQuery( '.task-detail-subtitle-status' ).before('<input class="rtl_chk" type="checkbox" value="rtl"> </span class="rtl_chk_label">RTL</span>');
+  jQuery( '.rtl_chk' ).change(function(){
+    if(jQuery( this).prop('checked')){
+      jQuery( '.task-detail-description' ).addClass('setRTL');
+    }else{
+      jQuery( '.task-detail-description' ).removeClass('setRTL');
+    }
   });
 }
